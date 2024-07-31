@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:favorite_places/screens/places.dart';
@@ -7,7 +8,7 @@ import 'package:favorite_places/screens/places.dart';
 final colorScheme = ColorScheme.fromSeed(
   brightness: Brightness.dark,
   seedColor: const Color.fromARGB(255, 102, 6, 247),
-  background: const Color.fromARGB(255, 56, 49, 66),
+  surface: const Color.fromARGB(255, 56, 49, 66),
 );
 
 final theme = ThemeData().copyWith(
@@ -28,7 +29,7 @@ final theme = ThemeData().copyWith(
 
 void main() {
   runApp(
-    const MyApp(),
+    const ProviderScope(child: MyApp()),
   );
 }
 
